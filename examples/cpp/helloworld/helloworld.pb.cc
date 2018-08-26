@@ -20,6 +20,11 @@
 #endif
 // @@protoc_insertion_point(includes)
 namespace helloworld {
+class HelloRequest_PhoneNumberDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<HelloRequest_PhoneNumber>
+      _instance;
+} _HelloRequest_PhoneNumber_default_instance_;
 class HelloRequestDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<HelloRequest>
@@ -32,6 +37,27 @@ class HelloReplyDefaultTypeInternal {
 } _HelloReply_default_instance_;
 }  // namespace helloworld
 namespace protobuf_helloworld_2eproto {
+void InitDefaultsHelloRequest_PhoneNumberImpl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  {
+    void* ptr = &::helloworld::_HelloRequest_PhoneNumber_default_instance_;
+    new (ptr) ::helloworld::HelloRequest_PhoneNumber();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::helloworld::HelloRequest_PhoneNumber::InitAsDefaultInstance();
+}
+
+void InitDefaultsHelloRequest_PhoneNumber() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsHelloRequest_PhoneNumberImpl);
+}
+
 void InitDefaultsHelloRequestImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -40,6 +66,7 @@ void InitDefaultsHelloRequestImpl() {
 #else
   ::google::protobuf::internal::InitProtobufDefaults();
 #endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_helloworld_2eproto::InitDefaultsHelloRequest_PhoneNumber();
   {
     void* ptr = &::helloworld::_HelloRequest_default_instance_;
     new (ptr) ::helloworld::HelloRequest();
@@ -74,28 +101,42 @@ void InitDefaultsHelloReply() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsHelloReplyImpl);
 }
 
-::google::protobuf::Metadata file_level_metadata[2];
+::google::protobuf::Metadata file_level_metadata[3];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::helloworld::HelloRequest_PhoneNumber, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::helloworld::HelloRequest_PhoneNumber, num_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::helloworld::HelloRequest_PhoneNumber, type_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::helloworld::HelloRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::helloworld::HelloRequest, name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::helloworld::HelloRequest, id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::helloworld::HelloRequest, email_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::helloworld::HelloRequest, phone_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::helloworld::HelloReply, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::helloworld::HelloReply, message_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::helloworld::HelloReply, id_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::helloworld::HelloRequest)},
-  { 6, -1, sizeof(::helloworld::HelloReply)},
+  { 0, -1, sizeof(::helloworld::HelloRequest_PhoneNumber)},
+  { 7, -1, sizeof(::helloworld::HelloRequest)},
+  { 16, -1, sizeof(::helloworld::HelloReply)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::helloworld::_HelloRequest_PhoneNumber_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::helloworld::_HelloRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::helloworld::_HelloReply_default_instance_),
 };
@@ -105,7 +146,7 @@ void protobuf_AssignDescriptors() {
   ::google::protobuf::MessageFactory* factory = NULL;
   AssignDescriptors(
       "helloworld.proto", schemas, file_default_instances, TableStruct::offsets, factory,
-      file_level_metadata, NULL, NULL);
+      file_level_metadata, file_level_enum_descriptors, NULL);
 }
 
 void protobuf_AssignDescriptorsOnce() {
@@ -116,21 +157,27 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 2);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 3);
 }
 
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\020helloworld.proto\022\nhelloworld\"\034\n\014HelloR"
-      "equest\022\014\n\004name\030\001 \001(\t\"\035\n\nHelloReply\022\017\n\007me"
-      "ssage\030\001 \001(\t2I\n\007Greeter\022>\n\010SayHello\022\030.hel"
-      "loworld.HelloRequest\032\026.helloworld.HelloR"
-      "eply\"\000B6\n\033io.grpc.examples.helloworldB\017H"
-      "elloWorldProtoP\001\242\002\003HLWb\006proto3"
+      "\n\020helloworld.proto\022\nhelloworld\"\347\001\n\014Hello"
+      "Request\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(\005\022\r\n\005ema"
+      "il\030\003 \001(\t\0223\n\005phone\030\004 \003(\0132$.helloworld.Hel"
+      "loRequest.PhoneNumber\032L\n\013PhoneNumber\022\013\n\003"
+      "num\030\001 \001(\t\0220\n\004type\030\002 \001(\0162\".helloworld.Hel"
+      "loRequest.PhoneType\"+\n\tPhoneType\022\n\n\006MOBI"
+      "LE\020\000\022\010\n\004HOME\020\001\022\010\n\004WORK\020\002\")\n\nHelloReply\022\017"
+      "\n\007message\030\001 \001(\t\022\n\n\002id\030\002 \001(\0052I\n\007Greeter\022>"
+      "\n\010SayHello\022\030.helloworld.HelloRequest\032\026.h"
+      "elloworld.HelloReply\"\000B6\n\033io.grpc.exampl"
+      "es.helloworldB\017HelloWorldProtoP\001\242\002\003HLWb\006"
+      "proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 230);
+      descriptor, 446);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "helloworld.proto", &protobuf_RegisterTypes);
 }
@@ -147,6 +194,326 @@ struct StaticDescriptorInitializer {
 } static_descriptor_initializer;
 }  // namespace protobuf_helloworld_2eproto
 namespace helloworld {
+const ::google::protobuf::EnumDescriptor* HelloRequest_PhoneType_descriptor() {
+  protobuf_helloworld_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_helloworld_2eproto::file_level_enum_descriptors[0];
+}
+bool HelloRequest_PhoneType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const HelloRequest_PhoneType HelloRequest::MOBILE;
+const HelloRequest_PhoneType HelloRequest::HOME;
+const HelloRequest_PhoneType HelloRequest::WORK;
+const HelloRequest_PhoneType HelloRequest::PhoneType_MIN;
+const HelloRequest_PhoneType HelloRequest::PhoneType_MAX;
+const int HelloRequest::PhoneType_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+// ===================================================================
+
+void HelloRequest_PhoneNumber::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int HelloRequest_PhoneNumber::kNumFieldNumber;
+const int HelloRequest_PhoneNumber::kTypeFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+HelloRequest_PhoneNumber::HelloRequest_PhoneNumber()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    ::protobuf_helloworld_2eproto::InitDefaultsHelloRequest_PhoneNumber();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:helloworld.HelloRequest.PhoneNumber)
+}
+HelloRequest_PhoneNumber::HelloRequest_PhoneNumber(const HelloRequest_PhoneNumber& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  num_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.num().size() > 0) {
+    num_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.num_);
+  }
+  type_ = from.type_;
+  // @@protoc_insertion_point(copy_constructor:helloworld.HelloRequest.PhoneNumber)
+}
+
+void HelloRequest_PhoneNumber::SharedCtor() {
+  num_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  type_ = 0;
+  _cached_size_ = 0;
+}
+
+HelloRequest_PhoneNumber::~HelloRequest_PhoneNumber() {
+  // @@protoc_insertion_point(destructor:helloworld.HelloRequest.PhoneNumber)
+  SharedDtor();
+}
+
+void HelloRequest_PhoneNumber::SharedDtor() {
+  num_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void HelloRequest_PhoneNumber::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* HelloRequest_PhoneNumber::descriptor() {
+  ::protobuf_helloworld_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_helloworld_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const HelloRequest_PhoneNumber& HelloRequest_PhoneNumber::default_instance() {
+  ::protobuf_helloworld_2eproto::InitDefaultsHelloRequest_PhoneNumber();
+  return *internal_default_instance();
+}
+
+HelloRequest_PhoneNumber* HelloRequest_PhoneNumber::New(::google::protobuf::Arena* arena) const {
+  HelloRequest_PhoneNumber* n = new HelloRequest_PhoneNumber;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void HelloRequest_PhoneNumber::Clear() {
+// @@protoc_insertion_point(message_clear_start:helloworld.HelloRequest.PhoneNumber)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  num_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  type_ = 0;
+  _internal_metadata_.Clear();
+}
+
+bool HelloRequest_PhoneNumber::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:helloworld.HelloRequest.PhoneNumber)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string num = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_num()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->num().data(), static_cast<int>(this->num().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "helloworld.HelloRequest.PhoneNumber.num"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .helloworld.HelloRequest.PhoneType type = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_type(static_cast< ::helloworld::HelloRequest_PhoneType >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:helloworld.HelloRequest.PhoneNumber)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:helloworld.HelloRequest.PhoneNumber)
+  return false;
+#undef DO_
+}
+
+void HelloRequest_PhoneNumber::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:helloworld.HelloRequest.PhoneNumber)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string num = 1;
+  if (this->num().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->num().data(), static_cast<int>(this->num().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "helloworld.HelloRequest.PhoneNumber.num");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->num(), output);
+  }
+
+  // .helloworld.HelloRequest.PhoneType type = 2;
+  if (this->type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->type(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:helloworld.HelloRequest.PhoneNumber)
+}
+
+::google::protobuf::uint8* HelloRequest_PhoneNumber::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:helloworld.HelloRequest.PhoneNumber)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string num = 1;
+  if (this->num().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->num().data(), static_cast<int>(this->num().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "helloworld.HelloRequest.PhoneNumber.num");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->num(), target);
+  }
+
+  // .helloworld.HelloRequest.PhoneType type = 2;
+  if (this->type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->type(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:helloworld.HelloRequest.PhoneNumber)
+  return target;
+}
+
+size_t HelloRequest_PhoneNumber::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:helloworld.HelloRequest.PhoneNumber)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string num = 1;
+  if (this->num().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->num());
+  }
+
+  // .helloworld.HelloRequest.PhoneType type = 2;
+  if (this->type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void HelloRequest_PhoneNumber::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:helloworld.HelloRequest.PhoneNumber)
+  GOOGLE_DCHECK_NE(&from, this);
+  const HelloRequest_PhoneNumber* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const HelloRequest_PhoneNumber>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:helloworld.HelloRequest.PhoneNumber)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:helloworld.HelloRequest.PhoneNumber)
+    MergeFrom(*source);
+  }
+}
+
+void HelloRequest_PhoneNumber::MergeFrom(const HelloRequest_PhoneNumber& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:helloworld.HelloRequest.PhoneNumber)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.num().size() > 0) {
+
+    num_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.num_);
+  }
+  if (from.type() != 0) {
+    set_type(from.type());
+  }
+}
+
+void HelloRequest_PhoneNumber::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:helloworld.HelloRequest.PhoneNumber)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void HelloRequest_PhoneNumber::CopyFrom(const HelloRequest_PhoneNumber& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:helloworld.HelloRequest.PhoneNumber)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool HelloRequest_PhoneNumber::IsInitialized() const {
+  return true;
+}
+
+void HelloRequest_PhoneNumber::Swap(HelloRequest_PhoneNumber* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void HelloRequest_PhoneNumber::InternalSwap(HelloRequest_PhoneNumber* other) {
+  using std::swap;
+  num_.Swap(&other->num_);
+  swap(type_, other->type_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata HelloRequest_PhoneNumber::GetMetadata() const {
+  protobuf_helloworld_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_helloworld_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
 
 // ===================================================================
 
@@ -154,6 +521,9 @@ void HelloRequest::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int HelloRequest::kNameFieldNumber;
+const int HelloRequest::kIdFieldNumber;
+const int HelloRequest::kEmailFieldNumber;
+const int HelloRequest::kPhoneFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 HelloRequest::HelloRequest()
@@ -167,17 +537,25 @@ HelloRequest::HelloRequest()
 HelloRequest::HelloRequest(const HelloRequest& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
+      phone_(from.phone_),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.name().size() > 0) {
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  email_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.email().size() > 0) {
+    email_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.email_);
+  }
+  id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:helloworld.HelloRequest)
 }
 
 void HelloRequest::SharedCtor() {
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  email_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  id_ = 0;
   _cached_size_ = 0;
 }
 
@@ -188,6 +566,7 @@ HelloRequest::~HelloRequest() {
 
 void HelloRequest::SharedDtor() {
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  email_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void HelloRequest::SetCachedSize(int size) const {
@@ -219,7 +598,10 @@ void HelloRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  phone_.Clear();
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  id_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -243,6 +625,47 @@ bool HelloRequest::MergePartialFromCodedStream(
             this->name().data(), static_cast<int>(this->name().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "helloworld.HelloRequest.name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 id = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &id_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string email = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_email()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->email().data(), static_cast<int>(this->email().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "helloworld.HelloRequest.email"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .helloworld.HelloRequest.PhoneNumber phone = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_phone()));
         } else {
           goto handle_unusual;
         }
@@ -285,6 +708,28 @@ void HelloRequest::SerializeWithCachedSizes(
       1, this->name(), output);
   }
 
+  // int32 id = 2;
+  if (this->id() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
+  }
+
+  // string email = 3;
+  if (this->email().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->email().data(), static_cast<int>(this->email().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "helloworld.HelloRequest.email");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->email(), output);
+  }
+
+  // repeated .helloworld.HelloRequest.PhoneNumber phone = 4;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->phone_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, this->phone(static_cast<int>(i)), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -310,6 +755,30 @@ void HelloRequest::SerializeWithCachedSizes(
         1, this->name(), target);
   }
 
+  // int32 id = 2;
+  if (this->id() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
+  }
+
+  // string email = 3;
+  if (this->email().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->email().data(), static_cast<int>(this->email().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "helloworld.HelloRequest.email");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->email(), target);
+  }
+
+  // repeated .helloworld.HelloRequest.PhoneNumber phone = 4;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->phone_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, this->phone(static_cast<int>(i)), deterministic, target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -327,11 +796,36 @@ size_t HelloRequest::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
+  // repeated .helloworld.HelloRequest.PhoneNumber phone = 4;
+  {
+    unsigned int count = static_cast<unsigned int>(this->phone_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->phone(static_cast<int>(i)));
+    }
+  }
+
   // string name = 1;
   if (this->name().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->name());
+  }
+
+  // string email = 3;
+  if (this->email().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->email());
+  }
+
+  // int32 id = 2;
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->id());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -363,9 +857,17 @@ void HelloRequest::MergeFrom(const HelloRequest& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  phone_.MergeFrom(from.phone_);
   if (from.name().size() > 0) {
 
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  if (from.email().size() > 0) {
+
+    email_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.email_);
+  }
+  if (from.id() != 0) {
+    set_id(from.id());
   }
 }
 
@@ -393,7 +895,10 @@ void HelloRequest::Swap(HelloRequest* other) {
 }
 void HelloRequest::InternalSwap(HelloRequest* other) {
   using std::swap;
+  phone_.InternalSwap(&other->phone_);
   name_.Swap(&other->name_);
+  email_.Swap(&other->email_);
+  swap(id_, other->id_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
 }
@@ -410,6 +915,7 @@ void HelloReply::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int HelloReply::kMessageFieldNumber;
+const int HelloReply::kIdFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 HelloReply::HelloReply()
@@ -429,11 +935,13 @@ HelloReply::HelloReply(const HelloReply& from)
   if (from.message().size() > 0) {
     message_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_);
   }
+  id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:helloworld.HelloReply)
 }
 
 void HelloReply::SharedCtor() {
   message_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  id_ = 0;
   _cached_size_ = 0;
 }
 
@@ -476,6 +984,7 @@ void HelloReply::Clear() {
   (void) cached_has_bits;
 
   message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  id_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -499,6 +1008,20 @@ bool HelloReply::MergePartialFromCodedStream(
             this->message().data(), static_cast<int>(this->message().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "helloworld.HelloReply.message"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 id = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &id_)));
         } else {
           goto handle_unusual;
         }
@@ -541,6 +1064,11 @@ void HelloReply::SerializeWithCachedSizes(
       1, this->message(), output);
   }
 
+  // int32 id = 2;
+  if (this->id() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -566,6 +1094,11 @@ void HelloReply::SerializeWithCachedSizes(
         1, this->message(), target);
   }
 
+  // int32 id = 2;
+  if (this->id() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -588,6 +1121,13 @@ size_t HelloReply::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->message());
+  }
+
+  // int32 id = 2;
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->id());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -623,6 +1163,9 @@ void HelloReply::MergeFrom(const HelloReply& from) {
 
     message_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_);
   }
+  if (from.id() != 0) {
+    set_id(from.id());
+  }
 }
 
 void HelloReply::CopyFrom(const ::google::protobuf::Message& from) {
@@ -650,6 +1193,7 @@ void HelloReply::Swap(HelloReply* other) {
 void HelloReply::InternalSwap(HelloReply* other) {
   using std::swap;
   message_.Swap(&other->message_);
+  swap(id_, other->id_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
 }

@@ -28,6 +28,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
@@ -36,17 +37,20 @@ namespace protobuf_helloworld_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[2];
+  static const ::google::protobuf::internal::ParseTable schema[3];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
 };
 void AddDescriptors();
+void InitDefaultsHelloRequest_PhoneNumberImpl();
+void InitDefaultsHelloRequest_PhoneNumber();
 void InitDefaultsHelloRequestImpl();
 void InitDefaultsHelloRequest();
 void InitDefaultsHelloReplyImpl();
 void InitDefaultsHelloReply();
 inline void InitDefaults() {
+  InitDefaultsHelloRequest_PhoneNumber();
   InitDefaultsHelloRequest();
   InitDefaultsHelloReply();
 }
@@ -58,10 +62,149 @@ extern HelloReplyDefaultTypeInternal _HelloReply_default_instance_;
 class HelloRequest;
 class HelloRequestDefaultTypeInternal;
 extern HelloRequestDefaultTypeInternal _HelloRequest_default_instance_;
+class HelloRequest_PhoneNumber;
+class HelloRequest_PhoneNumberDefaultTypeInternal;
+extern HelloRequest_PhoneNumberDefaultTypeInternal _HelloRequest_PhoneNumber_default_instance_;
 }  // namespace helloworld
 namespace helloworld {
 
+enum HelloRequest_PhoneType {
+  HelloRequest_PhoneType_MOBILE = 0,
+  HelloRequest_PhoneType_HOME = 1,
+  HelloRequest_PhoneType_WORK = 2,
+  HelloRequest_PhoneType_HelloRequest_PhoneType_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  HelloRequest_PhoneType_HelloRequest_PhoneType_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool HelloRequest_PhoneType_IsValid(int value);
+const HelloRequest_PhoneType HelloRequest_PhoneType_PhoneType_MIN = HelloRequest_PhoneType_MOBILE;
+const HelloRequest_PhoneType HelloRequest_PhoneType_PhoneType_MAX = HelloRequest_PhoneType_WORK;
+const int HelloRequest_PhoneType_PhoneType_ARRAYSIZE = HelloRequest_PhoneType_PhoneType_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* HelloRequest_PhoneType_descriptor();
+inline const ::std::string& HelloRequest_PhoneType_Name(HelloRequest_PhoneType value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    HelloRequest_PhoneType_descriptor(), value);
+}
+inline bool HelloRequest_PhoneType_Parse(
+    const ::std::string& name, HelloRequest_PhoneType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<HelloRequest_PhoneType>(
+    HelloRequest_PhoneType_descriptor(), name, value);
+}
 // ===================================================================
+
+class HelloRequest_PhoneNumber : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:helloworld.HelloRequest.PhoneNumber) */ {
+ public:
+  HelloRequest_PhoneNumber();
+  virtual ~HelloRequest_PhoneNumber();
+
+  HelloRequest_PhoneNumber(const HelloRequest_PhoneNumber& from);
+
+  inline HelloRequest_PhoneNumber& operator=(const HelloRequest_PhoneNumber& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  HelloRequest_PhoneNumber(HelloRequest_PhoneNumber&& from) noexcept
+    : HelloRequest_PhoneNumber() {
+    *this = ::std::move(from);
+  }
+
+  inline HelloRequest_PhoneNumber& operator=(HelloRequest_PhoneNumber&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const HelloRequest_PhoneNumber& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const HelloRequest_PhoneNumber* internal_default_instance() {
+    return reinterpret_cast<const HelloRequest_PhoneNumber*>(
+               &_HelloRequest_PhoneNumber_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    0;
+
+  void Swap(HelloRequest_PhoneNumber* other);
+  friend void swap(HelloRequest_PhoneNumber& a, HelloRequest_PhoneNumber& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline HelloRequest_PhoneNumber* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  HelloRequest_PhoneNumber* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const HelloRequest_PhoneNumber& from);
+  void MergeFrom(const HelloRequest_PhoneNumber& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(HelloRequest_PhoneNumber* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string num = 1;
+  void clear_num();
+  static const int kNumFieldNumber = 1;
+  const ::std::string& num() const;
+  void set_num(const ::std::string& value);
+  #if LANG_CXX11
+  void set_num(::std::string&& value);
+  #endif
+  void set_num(const char* value);
+  void set_num(const char* value, size_t size);
+  ::std::string* mutable_num();
+  ::std::string* release_num();
+  void set_allocated_num(::std::string* num);
+
+  // .helloworld.HelloRequest.PhoneType type = 2;
+  void clear_type();
+  static const int kTypeFieldNumber = 2;
+  ::helloworld::HelloRequest_PhoneType type() const;
+  void set_type(::helloworld::HelloRequest_PhoneType value);
+
+  // @@protoc_insertion_point(class_scope:helloworld.HelloRequest.PhoneNumber)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr num_;
+  int type_;
+  mutable int _cached_size_;
+  friend struct ::protobuf_helloworld_2eproto::TableStruct;
+  friend void ::protobuf_helloworld_2eproto::InitDefaultsHelloRequest_PhoneNumberImpl();
+};
+// -------------------------------------------------------------------
 
 class HelloRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:helloworld.HelloRequest) */ {
  public:
@@ -98,7 +241,7 @@ class HelloRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_HelloRequest_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    0;
+    1;
 
   void Swap(HelloRequest* other);
   friend void swap(HelloRequest& a, HelloRequest& b) {
@@ -143,7 +286,49 @@ class HelloRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
 
   // nested types ----------------------------------------------------
 
+  typedef HelloRequest_PhoneNumber PhoneNumber;
+
+  typedef HelloRequest_PhoneType PhoneType;
+  static const PhoneType MOBILE =
+    HelloRequest_PhoneType_MOBILE;
+  static const PhoneType HOME =
+    HelloRequest_PhoneType_HOME;
+  static const PhoneType WORK =
+    HelloRequest_PhoneType_WORK;
+  static inline bool PhoneType_IsValid(int value) {
+    return HelloRequest_PhoneType_IsValid(value);
+  }
+  static const PhoneType PhoneType_MIN =
+    HelloRequest_PhoneType_PhoneType_MIN;
+  static const PhoneType PhoneType_MAX =
+    HelloRequest_PhoneType_PhoneType_MAX;
+  static const int PhoneType_ARRAYSIZE =
+    HelloRequest_PhoneType_PhoneType_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  PhoneType_descriptor() {
+    return HelloRequest_PhoneType_descriptor();
+  }
+  static inline const ::std::string& PhoneType_Name(PhoneType value) {
+    return HelloRequest_PhoneType_Name(value);
+  }
+  static inline bool PhoneType_Parse(const ::std::string& name,
+      PhoneType* value) {
+    return HelloRequest_PhoneType_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
+
+  // repeated .helloworld.HelloRequest.PhoneNumber phone = 4;
+  int phone_size() const;
+  void clear_phone();
+  static const int kPhoneFieldNumber = 4;
+  const ::helloworld::HelloRequest_PhoneNumber& phone(int index) const;
+  ::helloworld::HelloRequest_PhoneNumber* mutable_phone(int index);
+  ::helloworld::HelloRequest_PhoneNumber* add_phone();
+  ::google::protobuf::RepeatedPtrField< ::helloworld::HelloRequest_PhoneNumber >*
+      mutable_phone();
+  const ::google::protobuf::RepeatedPtrField< ::helloworld::HelloRequest_PhoneNumber >&
+      phone() const;
 
   // string name = 1;
   void clear_name();
@@ -159,11 +344,34 @@ class HelloRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
+  // string email = 3;
+  void clear_email();
+  static const int kEmailFieldNumber = 3;
+  const ::std::string& email() const;
+  void set_email(const ::std::string& value);
+  #if LANG_CXX11
+  void set_email(::std::string&& value);
+  #endif
+  void set_email(const char* value);
+  void set_email(const char* value, size_t size);
+  ::std::string* mutable_email();
+  ::std::string* release_email();
+  void set_allocated_email(::std::string* email);
+
+  // int32 id = 2;
+  void clear_id();
+  static const int kIdFieldNumber = 2;
+  ::google::protobuf::int32 id() const;
+  void set_id(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:helloworld.HelloRequest)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::helloworld::HelloRequest_PhoneNumber > phone_;
   ::google::protobuf::internal::ArenaStringPtr name_;
+  ::google::protobuf::internal::ArenaStringPtr email_;
+  ::google::protobuf::int32 id_;
   mutable int _cached_size_;
   friend struct ::protobuf_helloworld_2eproto::TableStruct;
   friend void ::protobuf_helloworld_2eproto::InitDefaultsHelloRequestImpl();
@@ -205,7 +413,7 @@ class HelloReply : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_HelloReply_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(HelloReply* other);
   friend void swap(HelloReply& a, HelloReply& b) {
@@ -266,11 +474,18 @@ class HelloReply : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::std::string* release_message();
   void set_allocated_message(::std::string* message);
 
+  // int32 id = 2;
+  void clear_id();
+  static const int kIdFieldNumber = 2;
+  ::google::protobuf::int32 id() const;
+  void set_id(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:helloworld.HelloReply)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr message_;
+  ::google::protobuf::int32 id_;
   mutable int _cached_size_;
   friend struct ::protobuf_helloworld_2eproto::TableStruct;
   friend void ::protobuf_helloworld_2eproto::InitDefaultsHelloReplyImpl();
@@ -284,6 +499,77 @@ class HelloReply : public ::google::protobuf::Message /* @@protoc_insertion_poin
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// HelloRequest_PhoneNumber
+
+// string num = 1;
+inline void HelloRequest_PhoneNumber::clear_num() {
+  num_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& HelloRequest_PhoneNumber::num() const {
+  // @@protoc_insertion_point(field_get:helloworld.HelloRequest.PhoneNumber.num)
+  return num_.GetNoArena();
+}
+inline void HelloRequest_PhoneNumber::set_num(const ::std::string& value) {
+  
+  num_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:helloworld.HelloRequest.PhoneNumber.num)
+}
+#if LANG_CXX11
+inline void HelloRequest_PhoneNumber::set_num(::std::string&& value) {
+  
+  num_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:helloworld.HelloRequest.PhoneNumber.num)
+}
+#endif
+inline void HelloRequest_PhoneNumber::set_num(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  num_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:helloworld.HelloRequest.PhoneNumber.num)
+}
+inline void HelloRequest_PhoneNumber::set_num(const char* value, size_t size) {
+  
+  num_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:helloworld.HelloRequest.PhoneNumber.num)
+}
+inline ::std::string* HelloRequest_PhoneNumber::mutable_num() {
+  
+  // @@protoc_insertion_point(field_mutable:helloworld.HelloRequest.PhoneNumber.num)
+  return num_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* HelloRequest_PhoneNumber::release_num() {
+  // @@protoc_insertion_point(field_release:helloworld.HelloRequest.PhoneNumber.num)
+  
+  return num_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void HelloRequest_PhoneNumber::set_allocated_num(::std::string* num) {
+  if (num != NULL) {
+    
+  } else {
+    
+  }
+  num_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), num);
+  // @@protoc_insertion_point(field_set_allocated:helloworld.HelloRequest.PhoneNumber.num)
+}
+
+// .helloworld.HelloRequest.PhoneType type = 2;
+inline void HelloRequest_PhoneNumber::clear_type() {
+  type_ = 0;
+}
+inline ::helloworld::HelloRequest_PhoneType HelloRequest_PhoneNumber::type() const {
+  // @@protoc_insertion_point(field_get:helloworld.HelloRequest.PhoneNumber.type)
+  return static_cast< ::helloworld::HelloRequest_PhoneType >(type_);
+}
+inline void HelloRequest_PhoneNumber::set_type(::helloworld::HelloRequest_PhoneType value) {
+  
+  type_ = value;
+  // @@protoc_insertion_point(field_set:helloworld.HelloRequest.PhoneNumber.type)
+}
+
+// -------------------------------------------------------------------
+
 // HelloRequest
 
 // string name = 1;
@@ -337,6 +623,103 @@ inline void HelloRequest::set_allocated_name(::std::string* name) {
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
   // @@protoc_insertion_point(field_set_allocated:helloworld.HelloRequest.name)
+}
+
+// int32 id = 2;
+inline void HelloRequest::clear_id() {
+  id_ = 0;
+}
+inline ::google::protobuf::int32 HelloRequest::id() const {
+  // @@protoc_insertion_point(field_get:helloworld.HelloRequest.id)
+  return id_;
+}
+inline void HelloRequest::set_id(::google::protobuf::int32 value) {
+  
+  id_ = value;
+  // @@protoc_insertion_point(field_set:helloworld.HelloRequest.id)
+}
+
+// string email = 3;
+inline void HelloRequest::clear_email() {
+  email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& HelloRequest::email() const {
+  // @@protoc_insertion_point(field_get:helloworld.HelloRequest.email)
+  return email_.GetNoArena();
+}
+inline void HelloRequest::set_email(const ::std::string& value) {
+  
+  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:helloworld.HelloRequest.email)
+}
+#if LANG_CXX11
+inline void HelloRequest::set_email(::std::string&& value) {
+  
+  email_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:helloworld.HelloRequest.email)
+}
+#endif
+inline void HelloRequest::set_email(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:helloworld.HelloRequest.email)
+}
+inline void HelloRequest::set_email(const char* value, size_t size) {
+  
+  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:helloworld.HelloRequest.email)
+}
+inline ::std::string* HelloRequest::mutable_email() {
+  
+  // @@protoc_insertion_point(field_mutable:helloworld.HelloRequest.email)
+  return email_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* HelloRequest::release_email() {
+  // @@protoc_insertion_point(field_release:helloworld.HelloRequest.email)
+  
+  return email_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void HelloRequest::set_allocated_email(::std::string* email) {
+  if (email != NULL) {
+    
+  } else {
+    
+  }
+  email_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), email);
+  // @@protoc_insertion_point(field_set_allocated:helloworld.HelloRequest.email)
+}
+
+// repeated .helloworld.HelloRequest.PhoneNumber phone = 4;
+inline int HelloRequest::phone_size() const {
+  return phone_.size();
+}
+inline void HelloRequest::clear_phone() {
+  phone_.Clear();
+}
+inline const ::helloworld::HelloRequest_PhoneNumber& HelloRequest::phone(int index) const {
+  // @@protoc_insertion_point(field_get:helloworld.HelloRequest.phone)
+  return phone_.Get(index);
+}
+inline ::helloworld::HelloRequest_PhoneNumber* HelloRequest::mutable_phone(int index) {
+  // @@protoc_insertion_point(field_mutable:helloworld.HelloRequest.phone)
+  return phone_.Mutable(index);
+}
+inline ::helloworld::HelloRequest_PhoneNumber* HelloRequest::add_phone() {
+  // @@protoc_insertion_point(field_add:helloworld.HelloRequest.phone)
+  return phone_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::helloworld::HelloRequest_PhoneNumber >*
+HelloRequest::mutable_phone() {
+  // @@protoc_insertion_point(field_mutable_list:helloworld.HelloRequest.phone)
+  return &phone_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::helloworld::HelloRequest_PhoneNumber >&
+HelloRequest::phone() const {
+  // @@protoc_insertion_point(field_list:helloworld.HelloRequest.phone)
+  return phone_;
 }
 
 // -------------------------------------------------------------------
@@ -396,15 +779,43 @@ inline void HelloReply::set_allocated_message(::std::string* message) {
   // @@protoc_insertion_point(field_set_allocated:helloworld.HelloReply.message)
 }
 
+// int32 id = 2;
+inline void HelloReply::clear_id() {
+  id_ = 0;
+}
+inline ::google::protobuf::int32 HelloReply::id() const {
+  // @@protoc_insertion_point(field_get:helloworld.HelloReply.id)
+  return id_;
+}
+inline void HelloReply::set_id(::google::protobuf::int32 value) {
+  
+  id_ = value;
+  // @@protoc_insertion_point(field_set:helloworld.HelloReply.id)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 
 // @@protoc_insertion_point(namespace_scope)
 
 }  // namespace helloworld
+
+namespace google {
+namespace protobuf {
+
+template <> struct is_proto_enum< ::helloworld::HelloRequest_PhoneType> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::helloworld::HelloRequest_PhoneType>() {
+  return ::helloworld::HelloRequest_PhoneType_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 
