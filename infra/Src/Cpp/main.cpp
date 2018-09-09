@@ -6,6 +6,6 @@
 #include <iostream>
 
 int main(int argc, char const *argv[]) {
-  std::cout << "this is a test of Atom Makefile" << '\n';
+  std::cout << "this is a test of Atom Makefile for Windows" << '\n';
   return 0;
 }
